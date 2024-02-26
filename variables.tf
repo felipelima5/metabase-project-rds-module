@@ -84,3 +84,7 @@ variable "instance_identifier" {
 variable "parameter_group_family" {
   type = string
 }
+
+variable "subnets_ids" {
+  type = list(string)
+}
