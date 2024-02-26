@@ -1,4 +1,11 @@
 
+#Role Monitoring
+resource "aws_iam_role" "rds_monitoring_role" {
+  name               = "Role-Enhanced-Monitoring-RDS-${terraform.workspace}-${random_password.rds_role_name_sufixo.result}"
+  path               = "/system/"
+  assume_role_policy = data.aws_iam_policy_document.rds_assume_policy.json
+}
+
 # Trust Relationship
 data "aws_iam_policy_document" "rds_assume_policy" {
   statement {
