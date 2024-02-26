@@ -6,7 +6,7 @@ resource "aws_secretsmanager_secret_version" "version" {
   secret_id = aws_secretsmanager_secret.this.id
  
   secret_string = jsonencode({
-    "rds_username_${terraform.workspace}" = "postgres"
+    "rds_username_${terraform.workspace}" = "admin"
     "rds_password_${terraform.workspace}" = "${random_password.rds_instance_password.result}"
   })
 }
