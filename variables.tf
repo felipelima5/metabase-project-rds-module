@@ -88,3 +88,16 @@ variable "parameter_group_family" {
 variable "subnets_ids" {
   type = list(string)
 }
+
+variable "security_group_app_ingress_rules" {
+  type = list(object({
+    description     = string
+    port            = number
+    protocol        = string
+    security_groups = list(string)
+  }))
+}
+
+variable "vpc_id" {
+  type = string
+}
