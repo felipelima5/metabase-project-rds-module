@@ -1,5 +1,5 @@
 resource "aws_secretsmanager_secret" "this" {
-  name = "rds-${terraform.workspace}-${random_password.rds_instance_name_sufixo.result}"
+  name = "rds-db-${terraform.workspace}-${random_password.rds_instance_name_sufixo.result}"
 }
 
 resource "aws_secretsmanager_secret_version" "version" {
