@@ -76,3 +76,7 @@ variable "tags" {
 variable "aditional_tags" {
   type = map(string)
 }
+
+variable "instance_identifier" {
+  type = string
+}
