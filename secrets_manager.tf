@@ -1,3 +1,7 @@
+resource "aws_secretsmanager_secret" "this" {
+  name = "rds-${terraform.workspace}-${random_password.rds_instance_name_sufixo.result}"
+}
+
 resource "aws_secretsmanager_secret_version" "version" {
   secret_id = aws_secretsmanager_secret.this.id
  
