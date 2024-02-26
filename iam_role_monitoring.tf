@@ -1,3 +1,16 @@
+
+# Trust Relationship
+data "aws_iam_policy_document" "rds_assume_policy" {
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["monitoring.rds.amazonaws.com"]
+    }
+  }
+}
+
 #Anexando Policy
 resource "aws_iam_role_policy" "rds_monitoring_get_policy" {
   name   = "Policy-Enhanced-Monitoring-RDS-${terraform.workspace}-${random_password.rds_role_name_sufixo.result}"
