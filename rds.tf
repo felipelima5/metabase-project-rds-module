@@ -39,3 +39,10 @@ resource "aws_db_parameter_group" "this" {
 
   tags = merge(var.tags, var.aditional_tags)
 }
+
+resource "aws_db_subnet_group" "this" {
+  name        = var.instance_identifier
+  description = var.instance_identifier
+  subnet_ids  = var.subnets_ids
+  tags        = merge(var.tags, var.aditional_tags)
+}
