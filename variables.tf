@@ -80,3 +80,7 @@ variable "aditional_tags" {
 variable "instance_identifier" {
   type = string
 }
+
+variable "parameter_group_family" {
+  type = string
+}

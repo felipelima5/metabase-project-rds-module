@@ -26,3 +26,16 @@ resource "aws_db_instance" "rds" {
 
   tags = merge(var.tags, var.aditional_tags)
 }
+
+
+resource "aws_db_parameter_group" "this" {
+  name        = var.instance_identifier
+  description = var.instance_identifier
+  family      = var.parameter_group_family
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+  tags = merge(var.tags, var.aditional_tags)
+}
